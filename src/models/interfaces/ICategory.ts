@@ -1,4 +1,7 @@
-interface ICategory{
-    name: string,
-    isActive : boolean
+import { Document } from "mongoose";
+
+export interface ICategory extends Document {
+  name: string;
+  isActive: boolean;
+  imagePath: string;
 }
