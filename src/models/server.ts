@@ -25,15 +25,12 @@ class Server {
   }
 
   private middlewares() {
-    // this.app.use(morgan("dev"));
+    this.app.use(morgan("dev"));
   }
 
   async start() {
     try {
-      await connect(
-        "mongodb+srv://lzabala:lzabala**@nodeexpressprojects.jaidr.mongodb.net/forFood?retryWrites=true&w=majority" ||
-          ""
-      );
+      await connect(process.env.MONGO_URI || "");
       this.app.listen(this.port, () => {
         console.log(`The server is running on port ${this.port}`);
       });
