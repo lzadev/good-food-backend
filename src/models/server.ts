@@ -30,7 +30,10 @@ class Server {
 
   async start() {
     try {
-      await connect(process.env.MONGO_URI || "");
+      await connect(
+        "mongodb+srv://lzabala:lzabala**@nodeexpressprojects.jaidr.mongodb.net/forFood?retryWrites=true&w=majority" ||
+          ""
+      );
       this.app.listen(this.port, () => {
         console.log(`The server is running on port ${this.port}`);
       });
