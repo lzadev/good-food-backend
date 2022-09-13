@@ -25,7 +25,7 @@ class Server {
   }
 
   private middlewares() {
-    this.app.use(morgan("dev"));
+    // this.app.use(morgan("dev"));
   }
 
   async start() {
