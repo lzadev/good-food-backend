@@ -33,7 +33,7 @@ export const Create = async (
     const { name } = req.body;
     const newCategory = {
       name: name,
-      imagePath: req.file!.path,
+      imagePath: req.file ? req.file!.path : null,
     };
     const category = new Category(newCategory);
     await category.save();
